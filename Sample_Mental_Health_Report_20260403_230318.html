@@ -1,0 +1,445 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mental Health Assessment Report</title>
+            
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background: #f5f5f5;
+                padding: 20px;
+            }
+            
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: white;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 40px;
+                text-align: center;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            
+            .header p {
+                font-size: 16px;
+                opacity: 0.9;
+            }
+            
+            .confidential {
+                background: #dc2626;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            .section {
+                padding: 30px 40px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .section:last-child {
+                border-bottom: none;
+            }
+            
+            .section-title {
+                color: #1e3a8a;
+                font-size: 24px;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 3px solid #3b82f6;
+            }
+            
+            .risk-box {
+                padding: 20px;
+                border-radius: 8px;
+                margin: 20px 0;
+                text-align: center;
+            }
+            
+            .risk-low {
+                background: #d4edda;
+                border: 2px solid #2ecc71;
+                color: #155724;
+            }
+            
+            .risk-moderate {
+                background: #fff3cd;
+                border: 2px solid #f39c12;
+                color: #856404;
+            }
+            
+            .risk-high {
+                background: #f8d7da;
+                border: 2px solid #e74c3c;
+                color: #721c24;
+            }
+            
+            .risk-level {
+                font-size: 28px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            
+            .risk-probability {
+                font-size: 48px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            
+            th {
+                background: #3b82f6;
+                color: white;
+                padding: 12px;
+                text-align: left;
+                font-weight: 600;
+            }
+            
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            tr:nth-child(even) {
+                background: #f8f9fa;
+            }
+            
+            .factor-high {
+                background: #fee2e2;
+                font-weight: bold;
+            }
+            
+            .factor-moderate {
+                background: #fef3c7;
+            }
+            
+            .factor-low {
+                background: #d1fae5;
+            }
+            
+            .recommendation {
+                background: #eff6ff;
+                border-left: 4px solid #3b82f6;
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .recommendation h4 {
+                color: #1e3a8a;
+                margin-bottom: 10px;
+            }
+            
+            .recommendation ul {
+                margin-left: 20px;
+            }
+            
+            .recommendation li {
+                margin: 5px 0;
+            }
+            
+            .emergency-box {
+                background: #fee2e2;
+                border: 2px solid #dc2626;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .emergency-box h3 {
+                color: #dc2626;
+                margin-bottom: 15px;
+            }
+            
+            .resource-table {
+                margin: 20px 0;
+            }
+            
+            .disclaimer {
+                background: #fef3c7;
+                border-left: 4px solid #f59e0b;
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .footer {
+                background: #f3f4f6;
+                padding: 20px;
+                text-align: center;
+                font-size: 12px;
+                color: #6b7280;
+            }
+            
+            @media print {
+                body {
+                    background: white;
+                    padding: 0;
+                }
+                
+                .container {
+                    box-shadow: none;
+                }
+                
+                .section {
+                    page-break-inside: avoid;
+                }
+            }
+        </style>
+        
+        </head>
+        <body>
+            <div class="container">
+                
+        <div class="header">
+            <h1>🧠 Mental Health Assessment Report</h1>
+            <p>AI-Powered Student Wellness Screening</p>
+            <p style="margin-top: 10px; font-size: 14px;">Generated: April 03, 2026 at 11:03 PM</p>
+        </div>
+        <div class="confidential">
+            CONFIDENTIAL - This report contains sensitive health information
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Risk Assessment Summary</h2>
+            
+            <div class="risk-box risk-orange">
+                <div class="risk-level">Moderate Risk</div>
+                <div class="risk-probability">52.0%</div>
+                <p>Depression Risk Probability</p>
+            </div>
+            
+            <p style="margin-top: 20px;">Your assessment indicates moderate risk for depression. Some factors suggest 
+                          elevated stress levels that may benefit from attention and lifestyle adjustments. 
+                          Consider reaching out to campus resources for preventive support.</p>
+            
+            <table style="margin-top: 20px;">
+                <tr>
+                    <td><strong>Assessment Date:</strong></td>
+                    <td>April 03, 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Risk Level:</strong></td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td><strong>Probability Score:</strong></td>
+                    <td>52.0%</td>
+                </tr>
+            </table>
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Your Assessment Inputs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Your Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Age</strong></td><td>20 years</td></tr><tr><td><strong>Gender</strong></td><td>Male</td></tr><tr><td><strong>CGPA</strong></td><td>7.5/10.0</td></tr><tr><td><strong>Study Hours per Day</strong></td><td>6 hours</td></tr><tr><td><strong>Academic Pressure</strong></td><td>3/5</td></tr><tr><td><strong>Study Satisfaction</strong></td><td>3/5</td></tr><tr><td><strong>Sleep Duration</strong></td><td>7-8 hours</td></tr><tr><td><strong>Dietary Habits</strong></td><td>Moderate</td></tr><tr><td><strong>Financial Stress</strong></td><td>2/5</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Detailed Factor Analysis</h2>
+            <p>The following factors contributed to your risk score. Higher values indicate 
+            greater contribution to overall risk.</p>
+            
+            <table style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Risk Factor</th>
+                        <th>Contribution</th>
+                        <th>Impact Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr class="factor-moderate">
+                <td><strong>Academic Pressure</strong></td>
+                <td>14.4%</td>
+                <td>Moderate</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Financial Stress</strong></td>
+                <td>6.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Study Satisfaction</strong></td>
+                <td>3.6%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Sleep Duration</strong></td>
+                <td>3.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>CGPA</strong></td>
+                <td>3.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Dietary Habits</strong></td>
+                <td>3.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Gender</strong></td>
+                <td>3.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Study Hours</strong></td>
+                <td>2.0%</td>
+                <td>Low</td>
+            </tr>
+            
+            <tr class="factor-low">
+                <td><strong>Age</strong></td>
+                <td>2.0%</td>
+                <td>Low</td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Personalized Recommendations</h2>
+            
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Mental Health Resources</h2>
+            
+            
+            
+            <table class="resource-table">
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Contact</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Campus Counseling Center</strong></td>
+                        <td>XXX-XXX-XXXX</td>
+                        <td>Mon-Fri, 9 AM - 5 PM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>National Suicide Prevention Lifeline</strong></td>
+                        <td>1-800-273-8255</td>
+                        <td>24/7</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crisis Text Line</strong></td>
+                        <td>Text HOME to 741741</td>
+                        <td>24/7</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Student Health Services</strong></td>
+                        <td>Visit Student Center</td>
+                        <td>Walk-in Hours Daily</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Emergency Services</strong></td>
+                        <td>911</td>
+                        <td>24/7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+                
+        <div class="section">
+            <h2 class="section-title">Important Disclaimer</h2>
+            
+            <div class="disclaimer">
+                <h3>This is a screening tool, not a medical diagnosis.</h3>
+                <p style="margin-top: 10px;">
+                This assessment uses machine learning to identify potential risk factors based on 
+                lifestyle and academic patterns. It does not replace professional medical evaluation 
+                or diagnosis. The predictions are based on statistical patterns and may not account 
+                for all individual circumstances.
+                </p>
+            </div>
+            
+            <p style="margin-top: 20px;">
+                <strong>If you are experiencing mental health difficulties, please consult with a 
+                qualified healthcare provider.</strong> Mental health conditions are complex and 
+                require professional assessment and treatment.
+            </p>
+            
+            <h4 style="margin-top: 20px; color: #1e3a8a;">Model Information:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Algorithm: Random Forest Classifier</li>
+                <li>Training Data: 27,900 student records</li>
+                <li>Overall Accuracy: 84.1%</li>
+                <li>Recall Rate: 87% (sensitivity to at-risk cases)</li>
+                <li>Last Updated: January 2025</li>
+            </ul>
+            
+            <p style="margin-top: 20px;">
+                This report is confidential and intended for personal use only. Data privacy is 
+                maintained throughout the assessment process, with no information stored in external 
+                databases.
+            </p>
+        </div>
+        
+                
+        <div class="footer">
+            <p><strong>Mental Health Prediction Dashboard</strong></p>
+            <p>Generated: 2026-04-03 23:03:18</p>
+            <p>Developed by: Divyanshi Sahu, Deeksha Singh, Chhavi Agrahari, Mishika Kulshrestha</p>
+            <p>GL Bajaj Institute of Technology & Management | Department of CSE (Data Science)</p>
+            <p style="margin-top: 10px;"><strong>CONFIDENTIAL - For Personal Use Only</strong></p>
+        </div>
+        
+            </div>
+        </body>
+        </html>
+        
