@@ -39,42 +39,163 @@ st.set_page_config(
 # Custom CSS for better styling
 st.markdown("""
     <style>
-    .main {
-        padding: 0rem 1rem;
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700!important&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+        --bg-main: #f2f5f1;
+        --bg-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 1024'%3E%3Cpath fill='%23eaf0ea' d='M0,256L48,277.3C96,299,192,341,288,341.3C384,341,480,299,576,277.3C672,256,768,256,864,282.7C960,309,1056,363,1152,384C1248,405,1344,395,1392,389.3L1440,384L1440,1024L1392,1024C1344,1024,1248,1024,1152,1024C1056,1024,960,1024,864,1024C768,1024,672,1024,576,1024C480,1024,384,1024,288,1024C192,1024,96,1024,48,1024L0,1024Z'/%3E%3Cpath fill='%23e0e8e0' d='M0,512L48,522.7C96,533,192,555,288,522.7C384,491,480,405,576,373.3C672,341,768,363,864,394.7C960,427,1056,469,1152,480C1248,491,1344,469,1392,458.7L1440,448L1440,1024L1392,1024C1344,1024,1248,1024,1152,1024C1056,1024,960,1024,864,1024C768,1024,672,1024,576,1024C480,1024,384,1024,288,1024C192,1024,96,1024,48,1024L0,1024Z'/%3E%3Cpath fill='%23d6dfd7' d='M0,768L48,746.7C96,725,192,683,288,672C384,661,480,683,576,714.7C672,747,768,789,864,800C960,811,1056,789,1152,736C1248,683,1344,608,1392,570.7L1440,533L1440,1024L1392,1024C1344,1024,1248,1024,1152,1024C1056,1024,960,1024,864,1024C768,1024,672,1024,576,1024C480,1024,384,1024,288,1024C192,1024,96,1024,48,1024L0,1024Z'/%3E%3C/svg%3E");
+        --bg-card: #ffffff;
+        --text-primary: #1e3831;
+        --text-secondary: #6a7a72;
+        --border-color: rgba(30, 56, 49, 0.1);
+        --primary-teal: #4a9d82;
+        --btn-hover: #3d8870;
+        --sidebar-bg: #f8faf8;
     }
-    .stAlert {
-        padding: 1rem;
-        border-radius: 0.5rem;
-    }
-    .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        color: white;
-        margin: 0.5rem 0;
+
+
+
+    /* Force Streamlit app background */
+    .stApp {
+        background-color: var(--bg-main) !important;
+        background-image: var(--bg-img) !important;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        font-family: 'Inter', sans-serif;
     }
     
+    .stApp > header {
+        background-color: transparent !important;
+    }
+
+    /* Typography Overrides */
+    h1, h2, h3, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+        font-family: 'Lora', serif !important;
+        color: var(--text-primary) !important;
+    }
+
+    .stMarkdown p, .stMarkdown span, li {
+        color: var(--text-secondary);
+    }
+    
+    #root > div:nth-child(1) > div > div > div > div > section > div {
+        background-color: transparent !important;
+    }
+
+    /* Base Cards */
+    .feature-importance, .metric-card {
+        background-color: var(--bg-card) !important;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        color: var(--text-primary) !important;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .feature-importance:hover, .metric-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-teal);
+    }
+
+    /* Custom Header matching Serenity */
+    .dashboard-header {
+        text-align: center; 
+        padding: 4rem 1rem 2rem 1rem;
+        background-color: transparent !important;
+        color: var(--text-primary); 
+        margin-bottom: 2rem;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .dashboard-header h1 {
+        font-family: 'Lora', serif;
+        font-size: 3.5rem !important;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, var(--primary-teal) 0%, #86b5b5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .dashboard-header p {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        border-radius: 8px !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 500 !important;
+        background: var(--primary-teal) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 0.6rem 1.5rem !important;
+        box-shadow: none !important;
+        transition: background 0.2s ease !important;
+    }
+
+    .stButton > button:hover {
+        background: var(--btn-hover) !important;
+        transform: none !important;
+        color: #ffffff !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .stButton > button {
+            color: #171c1b !important;
+        }
+        .stButton > button:hover {
+            color: #171c1b !important;
+        }
+    }
+
     .download-button {
-        background-color: #10b981;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
+        background: var(--primary-teal);
+        color: #ffffff !important;
+        font-weight: 500;
+        padding: 0.7rem 1.5rem;
+        border-radius: 8px;
         text-decoration: none;
         display: inline-block;
         margin: 0.5rem 0;
+        transition: background 0.2s ease;
     }
-            
-    .feature-importance {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin: 0.5rem 0;
+    .download-button:hover {
+        background: var(--btn-hover);
     }
-    h1 {
-        color: #1e3a8a;
+    
+    @media (prefers-color-scheme: dark) {
+        .download-button {
+            color: #171c1b !important;
+        }
     }
-    h2 {
-        color: #3b82f6;
+
+    /* Alerts */
+    .stAlert {
+        background-color: var(--bg-card) !important;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        color: var(--text-primary);
+    }
+
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: var(--sidebar-bg) !important;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    div[data-baseweb="select"] > div {
+        background-color: var(--bg-card) !important;
+        border-color: var(--border-color) !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -202,16 +323,16 @@ def create_gauge_chart(probability):
         gauge={
             'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "darkblue"},
             'bar': {'color': "darkblue"},
-            'bgcolor': "white",
-            'borderwidth': 2,
-            'bordercolor': "gray",
+            'bgcolor': "rgba(0,0,0,0)",
+            'borderwidth': 0,
+            'bordercolor': "rgba(0,0,0,0)",
             'steps': [
-                {'range': [0, 30], 'color': "#26c94c"},
-                {'range': [30, 60], 'color': "#d7b239"},
-                {'range': [60, 100], 'color': "#c24f58"}
+                {'range': [0, 30], 'color': "#86b5b5"},
+                {'range': [30, 60], 'color': "#e4cba6"},
+                {'range': [60, 100], 'color': "#d98d8d"}
             ],
             'threshold': {
-                'line': {'color': "red", 'width': 4},
+                'line': {'color': "#e16a6a", 'width': 4},
                 'thickness': 0.75,
                 'value': 70
             }
@@ -221,8 +342,8 @@ def create_gauge_chart(probability):
     fig.update_layout(
         height=300,
         margin=dict(l=20, r=20, t=50, b=20),
-        paper_bgcolor="white",
-        font={'color': "darkblue", 'family': "Arial"}
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)"
     )
     
     return fig
@@ -242,7 +363,7 @@ def create_feature_importance_chart(contributions):
         orientation='h',
         marker=dict(
             color=values,
-            colorscale='Reds',
+            colorscale='Teal',
             showscale=False
         ),
         text=[f'{v:.1f}%' for v in values],
@@ -255,9 +376,8 @@ def create_feature_importance_chart(contributions):
         yaxis_title="Feature",
         height=400,
         margin=dict(l=20, r=20, t=40, b=20),
-        plot_bgcolor='black',
-        paper_bgcolor='black',
-        font=dict(size=12)
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)'
     )
     
     return fig
@@ -324,9 +444,9 @@ def create_download_link(pdf_buffer, filename):
 def main():
     # Header
     st.markdown("""
-        <div style='text-align: center; padding: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 0.5rem; margin-bottom: 2rem;'>
-            <h1 style='color: white; margin: 0;'>🧠 Mental Health Prediction Dashboard</h1>
-            <p style='margin: 0.5rem 0 0 0; font-size: 1.1rem;'>ML-Powered Student Wellness Assessment</p>
+        <div class="dashboard-header">
+            <h1>Find Your <span class="gradient-text">Inner Calm</span></h1>
+            <p>A gentle space for mindfulness, self-care, and emotional well-being. Take a breath. You belong here.</p>
         </div>
     """, unsafe_allow_html=True)
     
@@ -454,7 +574,7 @@ def main():
         # Predict button
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            if st.button("🔮 Predict Depression Risk", use_container_width=True, type="primary"):
+            if st.button("🔮 Predict Depression Risk", width="stretch", type="primary"):
                 # Prepare data
                 input_data = {
                     'age': age,
@@ -534,7 +654,7 @@ def main():
         
         with col1:
             st.plotly_chart(create_gauge_chart(result['probability']), 
-                          use_container_width=True)
+                          width="stretch")
         
         with col2:
             st.markdown("### 🎯 Key Risk Factors")
@@ -558,7 +678,7 @@ def main():
                     color = "#00cc44"
                 
                 st.markdown(f"""
-                <div style='background: {color}22; padding: 0.8rem; border-radius: 0.5rem; margin: 0.5rem 0; border-left: 4px solid {color};'>
+                <div class="feature-importance" style="border-left: 4px solid {color};">
                     <b>{icon} {feature}</b><br>
                     <span style='color: {color}; font-size: 1.2rem; font-weight: bold;'>
                         {value:.1f}% contribution to risk
@@ -569,11 +689,11 @@ def main():
         # Row 2: Feature Importance Chart
         st.markdown("### 📈 Detailed Feature Analysis")
         st.plotly_chart(create_feature_importance_chart(result['feature_contributions']), 
-                       use_container_width=True)
+                       width="stretch")
         
         # Row 3: Radar Chart
         st.markdown("### 🎯 Your Wellness Profile")
-        st.plotly_chart(create_radar_chart(input_data), use_container_width=True)
+        st.plotly_chart(create_radar_chart(input_data), width="stretch")
         
         # Recommendations Section
         st.markdown("---")
