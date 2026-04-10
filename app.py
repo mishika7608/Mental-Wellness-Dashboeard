@@ -30,8 +30,8 @@ except ImportError:
 
 # Page configuration
 st.set_page_config(
-    page_title="Mental Health Prediction Dashboard",
-    page_icon="🧠",
+    page_title="Lume - Mental Wellness",
+    page_icon="✨",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -445,6 +445,20 @@ def main():
     # Header
     st.markdown("""
         <div class="dashboard-header">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="M4.93 4.93l1.41 1.41"></path>
+                    <path d="M17.66 17.66l1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="M4.93 19.07l1.41-1.41"></path>
+                    <path d="M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                <h1 style="margin: 0; font-size: 3.5rem !important;">Lume</h1>
+            </div>
             <h1>Find Your <span class="gradient-text">Inner Calm</span></h1>
             <p>A gentle space for mindfulness, self-care, and emotional well-being. Take a breath. You belong here.</p>
         </div>
@@ -452,7 +466,22 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.image("https://img.icons8.com/clouds/200/000000/brain.png", width=150)
+        st.markdown("""
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 2rem;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="M4.93 4.93l1.41 1.41"></path>
+                    <path d="M17.66 17.66l1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="M4.93 19.07l1.41-1.41"></path>
+                    <path d="M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                <h2 style="margin: 0; font-family: 'Lora', serif; color: var(--primary-teal); font-size: 2rem;">Lume</h2>
+            </div>
+        """, unsafe_allow_html=True)
         st.markdown("### About This Tool")
         st.info("""
         This dashboard uses Machine Learning to predict depression risk based on:
